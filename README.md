@@ -32,3 +32,7 @@
 - アプリケーションの実装に使用したgem/bootstrapのリファレンスなどの記載は不要です。
 - 使用しない場合は、使用素材の項目をREADMEから削除してください。
 折りたたむ
+
+1. admin, userのtable(model)を作る
+2. rails cでadminのdataを作る
+3. deviseでログイン機能を作る
