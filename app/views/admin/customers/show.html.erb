@@ -1,0 +1,23 @@
+<!--<h1>Customers#show</h1>-->
+<!--<p>Find me in app/views/customers/show.html.erb</p>-->
+
+<h1>会員詳細</h1>
+
+ <p>会員ID</p><%= @customers.id %>
+  <p>漢字氏名</p><%= @customers.full_name %>
+   <p>カナ氏名</p><%= @customers.last_name_kana %><%= @customers.first_name_kana %>
+    <p>郵便番号</p><%= @customers.postal_code %>
+     <p>住所</p><%= @customers.address %>
+      <p>電話番号</p><%= @customers.telphone_number %>
+
+
+<% if @customers.is_deleted == true %>
+ <p>無効</p>
+<% else %>
+ <p>有効</p>
+<% end %>
+
+<%=link_to "編集する",edit_admin_customer_path(@customers), class: "btn btn-success"%>
+<%=link_to "注文履歴一覧を見る",admin_top_path,class:"btn btn-Primary" %>
+
+
