@@ -1,29 +1,29 @@
+<!--（本社）管理スタッフ用ログインページ-->
 <h1>LINEショップ</h1>
 
- <h3>店舗コード</h3>
-  <!--<h3>ログインスタッフ名</h3>-->
 
-  <div class=container px-5 px-sm-0>
-   <div class="row" >
-
-     <table class="table table-hover table-inverse">
-      <thead>
-       <!--<tr>-->
         <th>ショップ</th>
-         <th>販売登録キー</th>
-        
-        <th>受注・問合せ</th>
-         <th>問合せ</th>
-         
-         
-        <th>物流</th>
+        　 <th>販売登録キー</th><th>実行</th>
+
+        <th>問合せ</th>
+        　 <th>顧客新規登録</th><th>実行</th>
+          <th>顧客一覧</th><th>実行</th>
+          
+
+
 
         <th>商品管理</th>
-         <th>ジャンル一覧、追加</th>
-         <th>ジャンル編集</th>
+          <th>商品新規登録</th><th>実行</th>
+          <th>商品詳細</th><th>実行</th>
+          <th>商品編集</th><th>実行</th>
+
 
         <th>販売管理</th>
-         <th></th>
+          <th>ブランド一覧・追加</th><th>実行</th>
+          <th>ブランド編集</th><th>実行</th>
+
+
+
 
         <!--<th colspan="3"></th>-->
        </tr>
@@ -34,5 +34,7 @@
 
  </div>
 </div>
+
+<%= button_to 'sign_out', admin_destroy_sessions_path, method: :delete %>
 
 
