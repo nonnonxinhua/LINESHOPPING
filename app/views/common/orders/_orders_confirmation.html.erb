@@ -1,5 +1,3 @@
-注文情報確認画面
-
 <h3>注文情報確認</h3>
 
 
@@ -60,8 +58,12 @@
      <h2>お届け先 </h2>
      <p><%= @order.address %></p>
 
-     <%= form_with model: @order , url: orders_path  do |f| %>
+     <%= form_with model: @order, url: admin_orders_path  do |f| %>
       <%= f.hidden_field :address, :value => @order.address %>
+
+       <%= f.hidden_field :postal_code, :value => @order.postal_code %>
+        <%= f.hidden_field :name, :value => @order.name %>
+      <%= f.hidden_field :customer_id, :value => @order.customer_id %>
       <%= f.hidden_field :payment_method, :value => @order.payment_method %>
       <%= f.hidden_field :total_payment, :value => @subtotal %>
       <%= f.hidden_field :shipping_cost, :value =>  @shipping_cost %>

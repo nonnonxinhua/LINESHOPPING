@@ -1,0 +1,32 @@
+<h3><class="font-weight-normal">販売スタッフ一覧</h3>
+
+  <div class="col-md-8 offset-md-1">
+     <table class="table table-hover table-inverse">
+      <thead>
+       <tr>
+        <th>スタッフID</th>
+         <th>氏名</th>
+          <th>メールアドレス</th>
+           <th>ステータス</th>
+            <th colspan="3"></th>
+       </tr>
+      </thead>
+
+      <tbody>
+       <% @users.each do |user| %>
+        <tr>
+         <td><%= user.id %></td>
+          <td><%= link_to user.full_name,admin_user_path(user.id) %></td>
+           <td><%= user.email %></td>
+        <%if user.is_deleted==false %>
+         <td>有効</td>
+        <% else %>
+         <td>退会</td>
+        <% end %>
+        </tr>
+       <% end %>
+       <%= paginate @users %>
+
+      </tbody>
+    </table>
+  </div>

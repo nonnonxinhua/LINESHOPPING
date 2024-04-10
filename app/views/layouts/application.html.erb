@@ -6,11 +6,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+     <%= yield %>
+  <span id="back">
+
+    <% if  admin_signed_in? %>
+     <%= link_to '<-', admin_root_path %>
+    <% else %>
+     <%= link_to '<-', root_path %>
+    <% end %>
+
+  </span>
   </body>
 </html>

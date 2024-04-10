@@ -1,41 +1,33 @@
 <!--販売スタッフ用トップページ-->
-
 <h1>LINEショップ</h1>
 
- <h3>店舗コード</h3>
-
-
-  <div class=container px-5 px-sm-0>
-   <div class="row" >
-
-     <table class="table table-hover table-inverse">
-      <thead>
-       <!--<tr>-->
-        <th>ショップ</th>
-        　 <th>販売登録キー</th><th>実行</th>
-
+  <table>
+    <thead>
+      <tr>
         <th>問合せ</th>
-        　 <th>顧客新規登録</th><th>実行</th>
-          <th>顧客一覧</th><th>実行</th>
-          
+      </tr>
+      <tr>
+        　 <th>顧客新規登録</th><td><%=link_to "実行", new_admin_customer_path,class:"btn btn-Primary" %></td>
+      </tr>
+
+      <tr>
+        　  <th>顧客一覧</th><td><%=link_to "実行",admin_customers_path,class:"btn btn-Primary" %></td>
+      </tr>
+
+      <tr>
+        　 <th>注文履歴一覧</th><td><%=link_to "実行",admin_orders_path,class:"btn btn-Primary" %></td>
+      </tr>
 
 
-
+     <tr>
         <th>商品管理</th>
-          <th>商品新規登録</th><th>実行</th>
-          <th>商品詳細</th><th>実行</th>
-          <th>商品編集</th><th>実行</th>
-
-
-        <th>販売管理</th>
-          <th>ブランド一覧・追加</th><th>実行</th>
-          <th>ブランド編集</th><th>実行</th>
-
-
+     </tr>
+     <tr>
+          <th>商品一覧画面</th><td><%=link_to "実行",admin_items_path,class:"btn btn-Primary" %></td>
+    </tr>
 
 
         <!--<th colspan="3"></th>-->
-       </tr>
       </thead>
 
       <tbody></tbody>
@@ -44,5 +36,6 @@
  </div>
 </div>
 
+<%= button_to 'sign_out', destroy_admin_session_path, method: :delete %>
 
-<%= button_to 'sign_out', user_destroy_sessions_path, method: :delete %>
+

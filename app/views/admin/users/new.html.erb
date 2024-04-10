@@ -1,0 +1,50 @@
+<h4><class="font-weight-normal">新規販売スタッフ登録</h4>
+
+ <%= form_with model: @user, url: admin_users_path do |f| %>
+
+  <div class="field">
+    <%= f.label :last_name,"(姓)" %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name,"(名)" %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name_kana,"(セイ)"%><br />
+    <%= f.text_field :last_name_kana  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :first_name_kana,"(メイ)" %><br />
+    <%= f.text_field :first_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email,"（メールアドレス）" %><br />
+    <%= f.email_field :email  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password,"パスワード" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :password,"パスワード" %>
+    <% if @minimum_password_length %>
+    <em>(確認用)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "新規登録" %>
+  </div>
+<% end %>

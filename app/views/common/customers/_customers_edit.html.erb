@@ -1,0 +1,46 @@
+<h1 class="font-weight-normal">顧客情報編集</h1>
+
+
+ <%= form_with model: @customer,url: admin_customer_path(@customer) do |f| %>
+  <div class="field">
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name ,"漢字氏名" %>
+    <%= f.text_field :last_name %>
+     <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name_kana, "(カナ氏名)" %>
+    <%= f.text_field :last_name_kana %>
+    <%= f.text_field :first_name_kana %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code, "(郵便番号)" %>
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address, "(住所)" %>
+    <%= f.text_field :address, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telphone_number, "(電話番号)" %>
+    <%= f.text_field :telphone_number, autocomplete: "current-password" %>
+  </div>
+
+
+  <div class="field">
+  <%= f.radio_button :is_deleted, :true %>
+  <%= f.label :is_deleted, "退会", value: :true %>
+  <%= f.radio_button :is_deleted, :false %>
+  <%= f.label :is_deleted, "有効", value: :false %>
+  </div>
+
+ <%= f.submit '変更を保存' %>
+
+<% end %>
+
