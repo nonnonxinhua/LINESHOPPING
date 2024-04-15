@@ -1,4 +1,4 @@
-class User::UsersController < ApplicationController
+class User::Users::UsersController < ApplicationController
   def index
     @users = User.page(params[:page])
   end
