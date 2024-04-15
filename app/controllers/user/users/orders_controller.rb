@@ -1,4 +1,4 @@
-class User::OrdersController < ApplicationController
+class User::Users::OrdersController < ApplicationController
   before_action :set_person, only: [:confirmation, :new, :create,]
 
  def new
